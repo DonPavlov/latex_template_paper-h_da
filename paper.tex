@@ -1,0 +1,94 @@
+\documentclass[a4paper,10pt,notitlepage,twocolumn,oneside]{article}
+
+%\documentclass[prl]{revtex4}%Format for Phys. Rev. Lett. and other APS journals
+
+
+  %%%%%%%%%%%%
+ % PACKAGES %
+%%%%%%%%%%%%
+
+
+% Additional math & symbols by the American Mathematical Society
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Support for various unit symbols
+\usepackage[squaren]{SIunits}
+
+% Use more of the paper
+\usepackage{a4wide}
+
+% Use T1 encoded fonts
+\usepackage[T1]{fontenc}
+
+% Multi language support
+\usepackage[spanish,german]{babel}
+
+% Latin1 input encoding support
+\usepackage[latin1]{inputenc}
+
+% "Times" as standard roman font
+\usepackage{times}
+
+% "Times" as standard roman font _and_ math roman as well
+%\usepackage{mathptmx}
+
+% Support for T1 encoding with standard computer modern fonts
+%\usepackage{ae}
+
+% Hyperlink references
+\usepackage[dvips=true]{hyperref}
+
+% Index support
+\usepackage{makeidx}
+
+% Fancy headers
+\usepackage{fancyhdr}
+
+% Extended graphics support
+\usepackage{graphicx}
+
+%\usepackage[dvips]{graphics}
+% alter usepackage-Befehl
+
+% Set space between lines
+\usepackage{setspace}
+
+% Text companion extended symbols
+\usepackage{textcomp}
+
+
+
+
+
+  %%%%%%%%%%%%
+ % DOCUMENT %
+%%%%%%%%%%%%
+
+\begin{document}
+\title{Title of Paper}
+\author{V. Nachname$^{1,}$\thanks{Corresponding author. E-mail: email@email.de}\, Prof. Dr. V. Nachname$^1$\\
+\emph{$^1$ Hochschule Darmstadt - University of Applied Sciences,
+Haardtring 100}\\
+\emph{64295 Darmstadt, Germany}
+}
+
+\date{\today} % autodate
+%\date{19.10.2009}
+
+\maketitle
+
+%\keywords{Computergraphics, Stereoscopic, Interfaces}
+
+\input{abstract}
+\input{intro}
+\input{main}
+\input{conclusion}
+\input{references}
+
+% \input{example} % how to use/include a table, formula, picture... 
+
+\bibliography{bib}
+\bibliographystyle{apalike}
+
+\end{document}
