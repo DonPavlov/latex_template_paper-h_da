@@ -1,19 +1,47 @@
-\documentclass[a4paper,10pt,notitlepage,twocolumn,oneside]{article}
+\documentclass[a4paper,12pt]{report}
+
+% alternatives altes Layout
+%\documentclass[a4paper,10pt,notitlepage,twocolumn,oneside]{article}
 
 %\documentclass[prl]{revtex4}%Format for Phys. Rev. Lett. and other APS journals
+
+%----------------- PDF CONFIG ----------------- %
+\pdfinfo{    
+     /Title (PDF-Titel) 
+     /Subject   (PDF-Thema)    
+     /Author  (Vorname Nachname) 
+     /Keywords   (Stichwort1,Stichwort2)      
+} 
+
+\title{MyTitle}
+\author{theAuthor}
+\date{\today}
+
 
 
   %%%%%%%%%%%%
  % PACKAGES %
 %%%%%%%%%%%%
+%% a little bit of overkill an 
+% Schaltet den zusätzlichen Zwischenraum ab
+%\frenchspacing 
+%\usepackage{fix-cm}
 
+\usepackage{color}
+\usepackage{url}
 
 % Additional math & symbols by the American Mathematical Society
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+%entzerrt die Tabellenzeilen und bietet verschieden dicke Unterteilungslinien
+\usepackage{booktabs} 
+% Tabellen können sich nicht über mehrere Seiten erstrecken
+\usepackage{longtable} 
 % Support for various unit symbols
 \usepackage[squaren]{SIunits}
+% typographische Qualität 
+\usepackage{lmodern} 
 
 % Use more of the paper
 \usepackage{a4wide}
@@ -22,10 +50,16 @@
 \usepackage[T1]{fontenc}
 
 % Multi language support
-\usepackage[spanish,german]{babel}
+%\usepackage[spanish,german]{babel}
+
+% Use only german language
+\usepackage[ngerman]{babel} % deutsche Silbentrennung
 
 % Latin1 input encoding support
-\usepackage[latin1]{inputenc}
+%\usepackage[latin1]{inputenc}
+
+% Use UTF8
+\usepackage[utf8]{inputenc}
 
 % "Times" as standard roman font
 \usepackage{times}
@@ -37,8 +71,9 @@
 %\usepackage{ae}
 
 % Hyperlink references
-\usepackage[dvips=true]{hyperref}
-
+%\usepackage[dvips=true]{hyperref}
+% verwandelt alle Kapitelüberschriften, Verweise aufs Literaturverzeichnis und andere Querverweise in PDF-Hyperlinks
+\usepackage{hyperref} 
 % Index support
 \usepackage{makeidx}
 
@@ -66,19 +101,14 @@
 %%%%%%%%%%%%
 
 \begin{document}
-\title{Title of Paper}
-\author{V. Nachname$^{1,}$\thanks{Corresponding author. E-mail: email@email.de}\, Prof. Dr. V. Nachname$^1$\\
-\emph{$^1$ Hochschule Darmstadt - University of Applied Sciences,
-Haardtring 100}\\
-\emph{64295 Darmstadt, Germany}
-}
 
-\date{\today} % autodate
-%\date{19.10.2009}
+%----------------- DECKBLATT -----------------%
+\include{deckblatt}
 
-\maketitle
+\tableofcontents % Inhaltverzeichnis
 
 %\keywords{Computergraphics, Stereoscopic, Interfaces}
+
 
 \input{abstract}
 \input{intro}
